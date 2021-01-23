@@ -1,17 +1,8 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
+import SearchForm from "../shared/SearchForm/SearchForm";
 import "./MainPage.css";
 
 const MainPage = () => {
-  const [inputValue, setInputValue] = useState("");
-  const history = useHistory();
-
-  const handleFormSubmition = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    history.push(`/results/${inputValue}`);
-  };
-
   return (
     <section className="spaceweb section--main">
       <div className="spaceweb__contentContainer">
@@ -32,21 +23,11 @@ const MainPage = () => {
           Search through NASA API to explore space. Begin your journey by typing
           something down there
         </motion.p>
-        <motion.form
-          className="spaceweb__form"
-          onSubmit={handleFormSubmition}
+        <SearchForm
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
-        >
-          <input
-            className="spaceweb__input"
-            type="text"
-            placeholder="eg. Saturn"
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-          />
-        </motion.form>
+        />
       </div>
     </section>
   );

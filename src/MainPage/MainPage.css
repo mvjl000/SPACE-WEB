@@ -35,29 +35,6 @@
   text-align: center;
 }
 
-.spaceweb__form {
-  width: 100%;
-  text-align: center;
-}
-
-.spaceweb__form::after {
-  content: "";
-  margin: 0 auto;
-  display: block;
-  width: 70%;
-  height: 2px;
-  background-color: white;
-}
-
-.spaceweb__input {
-  margin-bottom: 3px;
-  width: 70%;
-  background-color: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-}
-
 @media (min-width: 1024px) {
   .spaceweb__heading {
     font-size: 60px;

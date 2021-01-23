@@ -1,0 +1,38 @@
+.searchForm {
+  width: 100%;
+  text-align: center;
+}
+
+.searchForm::after {
+  content: "";
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+  height: 2px;
+  background-color: white;
+}
+
+.searchForm--results.searchForm::after {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 35%;
+}
+
+.searchForm__input {
+  margin-bottom: 3px;
+  width: 70%;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.searchForm--results .searchForm__input {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 1024px) {
+  .searchForm__input {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+}
