@@ -10,8 +10,8 @@ const ResultsPage = () => {
   const { phrase } = useParams<ResultsParams>();
 
   return (
-    <div>
-      <h1>RESULTS {phrase}</h1>
+    <div className="result">
+      <h1 className="results__heading">SPACE WEB</h1>
     </div>
   );
 };

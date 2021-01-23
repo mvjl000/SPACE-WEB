@@ -22,7 +22,6 @@
 .spaceweb__heading {
   margin-top: 25px;
   font-size: 46px;
-  letter-spacing: 1px;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -52,6 +51,7 @@
 
 .spaceweb__input {
   margin-bottom: 3px;
+  width: 70%;
   background-color: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.9);
@@ -60,9 +60,10 @@
 
 @media (min-width: 1024px) {
   .spaceweb__heading {
-    font-size: 52px;
+    font-size: 60px;
   }
   .spaceweb__contentContainer {
+    height: 250px;
     max-width: 450px;
   }
   .spaceweb__content {
