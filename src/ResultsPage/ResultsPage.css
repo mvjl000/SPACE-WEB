@@ -4,6 +4,7 @@
 }
 
 .results__heading {
+  transform: translateX(-50%);
   margin: 30px 0 10px;
   font-size: 30px;
   color: black;

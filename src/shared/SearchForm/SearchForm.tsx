@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Initial } from "../../types/animations";
@@ -11,6 +11,7 @@ interface SearchFormProps {
   initial: Initial;
   animate: Animate;
   transition: Transiton;
+  searchValue: string;
   optionalClassName?: string;
 }
 
@@ -19,9 +20,14 @@ const SearchForm: React.FC<SearchFormProps> = ({
   animate,
   transition,
   optionalClassName,
+  searchValue,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const history = useHistory();
+
+  useEffect(() => {
+    setInputValue(searchValue);
+  }, [searchValue]);
 
   const handleFormSubmition = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
