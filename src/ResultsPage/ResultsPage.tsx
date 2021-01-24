@@ -15,16 +15,16 @@ const ResultsPage = () => {
     <div className="results">
       <motion.h1
         className="results__heading"
-        initial={{ y: "300px", fontSize: "60px" }}
+        initial={{ y: "calc(30vh - 25px)", fontSize: "58px" }}
         animate={{ y: 0, fontSize: "30px" }}
         transition={{ duration: 1, delay: 0.3 }}
       >
         SPACE WEB
       </motion.h1>
       <SearchForm
-        initial={{ opacity: 0, y: "330px" }}
-        animate={{ opacity: 1, y: "0" }}
-        transition={{ duration: 1, delay: 0.3 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         optionalClassName="results"
         searchValue={phrase}
       />
