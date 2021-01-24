@@ -10,11 +10,14 @@
   width: 70%;
   height: 2px;
   background-color: white;
+  animation: expandAfter 1s ease-out 3s;
 }
 
 .searchForm--results.searchForm::after {
   background-color: rgba(0, 0, 0, 0.8);
   width: 125px;
+  max-width: 125;
+  animation: none;
 }
 
 .searchForm__input {
@@ -34,5 +37,14 @@
   .searchForm__input {
     margin-top: 5px;
     font-size: 18px;
+  }
+}
+
+@keyframes expandAfter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
   }
 }
