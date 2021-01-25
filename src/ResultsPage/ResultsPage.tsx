@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import SearchForm from "../shared/SearchForm/SearchForm";
+import Loader from "../shared/Loader/Loader";
 
 import "./ResultsPage.css";
 
@@ -29,14 +30,17 @@ const ResultsPage = () => {
   const [images, setImages] = useState<ImagesArray>([
     { data: [{ title: "" }], links: [{ href: "" }] },
   ]);
+  const [isLoading, setIsLoading] = useState(true);
   const { phrase } = useParams<ResultsParams>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setIsLoading(true);
         const response = await axios.get(
           `https://images-api.nasa.gov/search?q=${phrase}&media_type=image`
         );
+        setIsLoading(false);
         setImages(response.data.collection.items);
         // console.log(response.data.collection.items);
       } catch (err) {
@@ -65,25 +69,29 @@ const ResultsPage = () => {
         optionalClassName="results"
         searchValue={phrase}
       />
-      <div className="results__gallery">
-        {images.length > 1 ? (
-          images.map((image, index) => {
-            if (index < 50) {
-              return (
-                <div
-                  className="results__imageContainer"
-                  key={image.links[0].href}
-                >
-                  <img src={image.links[0].href} alt={image.links[0].href} />
-                </div>
-              );
-            }
-            return undefined;
-          })
-        ) : (
-          <h2>No images found</h2>
-        )}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className="results__gallery">
+          {images.length > 1 ? (
+            images.map((image, index) => {
+              if (index < 50) {
+                return (
+                  <div
+                    className="results__imageContainer"
+                    key={image.links[0].href}
+                  >
+                    <img src={image.links[0].href} alt={image.links[0].href} />
+                  </div>
+                );
+              }
+              return undefined;
+            })
+          ) : (
+            <h2>No images found</h2>
+          )}
+        </div>
+      )}
     </div>
   );
 };
