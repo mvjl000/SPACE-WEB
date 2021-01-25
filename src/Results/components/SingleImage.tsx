@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FetchedImage } from "../types/fetchedImages";
+import { FetchedImage } from "../../types/fetchedImages";
+
+import "./SingleImage.css";
 
 const SingleImage: React.FC<FetchedImage> = ({ links, data }) => {
   const [showTite, setShowTitle] = useState(false);

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SearchForm from "../shared/SearchForm/SearchForm";
-import AboutButton from "../About/AboutButton";
+import AboutButton from "../shared/AboutButton/AboutButton";
 import "./MainPage.css";
 
 const MainPage = () => {

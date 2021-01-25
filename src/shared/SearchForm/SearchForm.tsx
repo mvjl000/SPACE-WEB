@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Initial } from "../../types/animations";
-import { Animate } from "../../types/animations";
-import { Transiton } from "../../types/animations";
+import { Initial, Animate, Transiton } from "../../types/animations";
 
 import "./SearchForm.css";
 

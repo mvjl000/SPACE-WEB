@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
-import MainPage from "./MainPage/MainPage";
-import ResultsPage from "./ResultsPage/ResultsPage";
+import MainPage from "./Main/MainPage";
+import ResultsPage from "./Results/ResultsPage";
 import About from "./About/About";
 
 const App = () => {

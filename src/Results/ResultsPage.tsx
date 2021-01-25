@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { ImagesArray } from "../types/fetchedImages";
 import SearchForm from "../shared/SearchForm/SearchForm";
-import SingleImage from "./SingleImage";
+import SingleImage from "./components/SingleImage";
 import Loader from "../shared/Loader/Loader";
 
 import "./ResultsPage.css";
