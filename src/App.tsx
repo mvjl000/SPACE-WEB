@@ -8,12 +8,14 @@ import "./App.css";
 
 import MainPage from "./MainPage/MainPage";
 import ResultsPage from "./ResultsPage/ResultsPage";
+import About from "./About/About";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={MainPage} />
+        <Route path="/about" component={About} />
         <Route path="/results/:phrase" component={ResultsPage} />
         <Redirect to="/" />
       </Switch>

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import SearchForm from "../shared/SearchForm/SearchForm";
+import AboutButton from "../About/AboutButton";
 import "./MainPage.css";
 
 const MainPage = () => {
   return (
     <section className="spaceweb section--main">
+      <AboutButton />
       <div className="spaceweb__contentContainer">
         <motion.h1
           className="spaceweb__heading"
