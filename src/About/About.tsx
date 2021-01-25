@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import reactLogo from "../assets/react-logo-square.png";
 import typescriptLogo from "../assets/typescript-logo.svg.png";
@@ -9,7 +10,12 @@ import "./About.css";
 
 const About: React.FC = () => {
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <Link to="/">
         <h1 className="about__heading">SPACE WEB</h1>
       </Link>
@@ -53,7 +59,7 @@ const About: React.FC = () => {
           <p className="about__description">Made by Milosz Piskadlo</p>
         </section>
       </main>
-    </div>
+    </motion.div>
   );
 };
 
