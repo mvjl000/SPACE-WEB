@@ -58,7 +58,12 @@ const ResultsPage = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="results__gallery">
+        <motion.div
+          className="results__gallery"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
           {images.length > 1 ? (
             images.map(({ links, data }, index) => {
               if (index < 28)
@@ -77,7 +82,7 @@ const ResultsPage = () => {
               No images found, please try other phrase.
             </motion.h2>
           )}
-        </div>
+        </motion.div>
       )}
     </div>
   );

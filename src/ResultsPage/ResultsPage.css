@@ -27,6 +27,7 @@
 
 .results__imageContainer {
   position: relative;
+  overflow: hidden;
 }
 
 .results__imageContainer > img {
