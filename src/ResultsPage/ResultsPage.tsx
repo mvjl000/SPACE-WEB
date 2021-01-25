@@ -61,7 +61,7 @@ const ResultsPage = () => {
         <div className="results__gallery">
           {images.length > 1 ? (
             images.map(({ links, data }, index) => {
-              if (index < 50) {
+              if (index < 28) {
                 return (
                   <SingleImage key={links[0].href} links={links} data={data} />
                 );
@@ -69,7 +69,14 @@ const ResultsPage = () => {
               return undefined;
             })
           ) : (
-            <h2>No images found</h2>
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="errorMessage"
+            >
+              No images found, please try other phrase.
+            </motion.h2>
           )}
         </div>
       )}

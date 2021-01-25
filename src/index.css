@@ -16,3 +16,11 @@ body {
 a {
   text-decoration: none;
 }
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
