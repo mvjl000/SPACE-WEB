@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { ImagesArray } from "../types/fetchedImages";
 import SearchForm from "../shared/SearchForm/SearchForm";
+import SingleImage from "./SingleImage";
 import Loader from "../shared/Loader/Loader";
 
 import "./ResultsPage.css";
@@ -10,21 +12,6 @@ import "./ResultsPage.css";
 interface ResultsParams {
   phrase: string;
 }
-
-type ImagesArray = [
-  {
-    data: [
-      {
-        title: string;
-      }
-    ];
-    links: [
-      {
-        href: string;
-      }
-    ];
-  }
-];
 
 const ResultsPage = () => {
   const [images, setImages] = useState<ImagesArray>([
@@ -42,7 +29,6 @@ const ResultsPage = () => {
         );
         setIsLoading(false);
         setImages(response.data.collection.items);
-        // console.log(response.data.collection.items);
       } catch (err) {
         console.log(err);
       }
@@ -74,15 +60,10 @@ const ResultsPage = () => {
       ) : (
         <div className="results__gallery">
           {images.length > 1 ? (
-            images.map((image, index) => {
+            images.map(({ links, data }, index) => {
               if (index < 50) {
                 return (
-                  <div
-                    className="results__imageContainer"
-                    key={image.links[0].href}
-                  >
-                    <img src={image.links[0].href} alt={image.links[0].href} />
-                  </div>
+                  <SingleImage key={links[0].href} links={links} data={data} />
                 );
               }
               return undefined;
