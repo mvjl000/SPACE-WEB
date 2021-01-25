@@ -4,14 +4,18 @@ import { motion } from "framer-motion";
 
 import "./AboutButton.css";
 
-const About: React.FC = () => {
+interface AboutButtonProps {
+  optionalClassName?: string;
+}
+
+const About: React.FC<AboutButtonProps> = ({ optionalClassName }) => {
   return (
     <Link to="/about">
       <motion.button
-        className="aboutButton"
+        className={`aboutButton ${optionalClassName ? optionalClassName : ""}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 4 }}
+        transition={{ duration: 0.5, delay: optionalClassName ? 2 : 4 }}
       >
         About
       </motion.button>

@@ -5,6 +5,7 @@ import axios from "axios";
 import { ImagesArray } from "../types/fetchedImages";
 import SearchForm from "../shared/SearchForm/SearchForm";
 import SingleImage from "./components/SingleImage";
+import AboutButton from "../shared/AboutButton/AboutButton";
 import Loader from "../shared/Loader/Loader";
 
 import "./ResultsPage.css";
@@ -38,6 +39,7 @@ const ResultsPage = () => {
 
   return (
     <div className="results">
+      <AboutButton optionalClassName="aboutButton--results" />
       <Link to="/">
         <motion.h1
           className="results__heading"

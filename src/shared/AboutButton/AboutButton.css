@@ -26,10 +26,24 @@
   width: 100%;
 }
 
+.aboutButton--results {
+  display: none;
+  color: black;
+}
+
+.aboutButton--results::after {
+  background-color: black;
+}
+
 @media (min-width: 1024px) {
   .aboutButton {
     top: 35px;
     right: 50px;
     font-size: 22px;
+  }
+
+  .aboutButton--results {
+    display: inline-block;
+    color: black;
   }
 }
