@@ -61,11 +61,10 @@ const ResultsPage = () => {
         <div className="results__gallery">
           {images.length > 1 ? (
             images.map(({ links, data }, index) => {
-              if (index < 28) {
+              if (index < 28)
                 return (
                   <SingleImage key={links[0].href} links={links} data={data} />
                 );
-              }
               return undefined;
             })
           ) : (
