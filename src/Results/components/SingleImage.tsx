@@ -1,22 +1,25 @@
-import React, { useState } from "react";
-import { FetchedImage } from "../../types/fetchedImages";
+import React, { useState } from 'react';
+import { FetchedImage } from '../../types/fetchedImages';
 
-import "./SingleImage.css";
+import './SingleImage.css';
 
 const SingleImage: React.FC<FetchedImage> = ({ links, data }) => {
-  const [showTite, setShowTitle] = useState(false);
+  const [showTitle, setShowTitle] = useState(false);
 
   return (
-    <div className="results__imageContainer" key={links[0].href}>
+    <div
+      onClick={() => setShowTitle(!showTitle)}
+      className='results__imageContainer'
+      key={links[0].href}
+    >
       <div
-        onClick={() => setShowTitle(!showTite)}
         className={`results__imageCover${
-          showTite ? " results__imageCover--active" : ""
+          showTitle ? ' results__imageCover--active' : ''
         }`}
       >
         <p>{data[0].title}</p>
       </div>
-      <img src={links[0].href} alt={links[0].href} loading="lazy" />
+      <img src={links[0].href} alt={links[0].href} loading='lazy' />
     </div>
   );
 };
